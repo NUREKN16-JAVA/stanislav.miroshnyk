@@ -1,0 +1,9 @@
+Testsuite: ua.nure.itkn.miroshnyk.usermanagement.ua.nure.itkn.miroshnyk.usermanagement.UserTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0,334 sec
+
+Testcase: testGetAfterAge took 0,031 sec
+Testcase: testGetFullName took 0 sec
+Testcase: testGetBeforeAge took 0 sec
+Testcase: testGetAgeToday took 0,27 sec
+Testcase: testGetAgeAfterSameMonth took 0 sec
+Testcase: testGetAgeBeforeSameMonth took 0 sec
