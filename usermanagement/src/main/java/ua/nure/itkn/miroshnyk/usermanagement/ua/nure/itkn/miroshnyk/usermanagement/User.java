@@ -5,38 +5,43 @@ import java.rmi.registry.LocateRegistry;
 import java.time.LocalDate;;
 
 public class User implements Serializable {
-    private long id;
+    private Long id;
     private String firstName;
     private String lastName;
     private LocalDate dateOfBirth;
 
-    public User(long id, String firstName, String lastName, LocalDate dateOfBirth) {
+
+    public User(Long id, String firstName, String lastName, LocalDate dateOfBirth) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
     }
 
-    public int getAge() {
-        LocalDate date = LocalDate.of(2018, 11, 12);
-        int age = date.getYear() - dateOfBirth.getYear();
-        if (date.getMonthValue() < dateOfBirth.getMonthValue() || (date.getMonthValue() == dateOfBirth.getMonthValue()
-                && date.getDayOfMonth() < dateOfBirth.getDayOfMonth())) {
-            --age;
-        }
-        return age;
-    }
+    public User() {}
 
-    public String testGetFullName(){
-        return getFirstName() + ", " + getLastName();
-    }
-
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public LocalDate getDateOfBirth() {
@@ -47,21 +52,18 @@ public class User implements Serializable {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public String getLastName() {
-
-        return lastName;
+    String testGetFullName() {
+        return lastName + ", " + firstName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+    long getAge() {
+        LocalDate date = LocalDate.now();
+        int age = date.getYear() - dateOfBirth.getYear();
+        if (date.getMonthValue() < dateOfBirth.getMonthValue() ||
+                (date.getMonthValue() == dateOfBirth.getMonthValue() && date.getDayOfMonth() < dateOfBirth.getDayOfMonth())) {
+            --age;
+        }
 
-    public String getFirstName() {
-
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        return age;
     }
 }
