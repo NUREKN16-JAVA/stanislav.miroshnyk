@@ -1,0 +1,21 @@
+<dataset>
+    <table mame ="users">
+        <column>id</column>
+        <column>firstname</column>
+        <column>lastname</column>
+        <column>dateofbirth</column>
+        <row>
+            <value>500</value>
+            <value>Leo</value>
+            <value>Messi</value>
+            <value>1988-04-26</value>
+        </row>
+
+        <row>
+            <value>501</value>
+            <value>Anton</value>
+            <value>Parov</value>
+            <value>1949-08-17</value>
+        </row>
+    </table>
+</dataset>
